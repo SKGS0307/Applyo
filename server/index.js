@@ -11,10 +11,15 @@ require("dotenv").config();
 
 
 app.use(bodyParser.json());
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+    origin: "http://localhost:3000", // your frontend
+    credentials: true
+  }));
+  
 
 app.use("/auth",AuthRouter );
-app .use("/api",TaskRouter);
+app.use("/api",TaskRouter);
 
 
 

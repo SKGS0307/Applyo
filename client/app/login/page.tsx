@@ -34,6 +34,8 @@ function Page() {
     setLoading(true);
     try {
 
+      // console.log("CLIENT: Sending this data:", JSON.stringify(loginInfo));
+
       const url = `${process.env.NEXT_PUBLIC_BASE_URL}/auth/login`;
       const res = await fetch(url, {
         method: "POST",
